@@ -18,7 +18,6 @@ mongoose.connection.on('connected', function(){
   console.log("Mongoose connected !!!");
 })
 
-var port =3000;
 
 var cookieParser = require('cookie-parser');
 
@@ -59,12 +58,9 @@ app.use(express.static("dist"));
 app.use(sessionMiddleware);
 
 // https://expressjs.com/en/starter/basic-routing.html
-// app.get("/", (req, res) => {
-//   res.render("index.pug")
-// });
-// app.get('/', (req, res) => {
-//   res.sendFile('index.html');
-// })
+app.get("/", (req, res) => {
+  res.render("index.pug")
+});
 
 app.use('/api/transaction', apiTransaction);
 app.use('/api/book', apiBook);
@@ -82,6 +78,6 @@ app.use("/transactions", authMiddleware.requireAuth, transRoute);
 app.use('/profile', authMiddleware.requireAuth, profileRoute);
 
 // listen for requests :)
-const listener = app.listen(port, () => {
+const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
 });
