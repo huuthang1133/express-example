@@ -9,7 +9,7 @@ var db = require("./db");
 
 var mongoose = require('mongoose');
 
-var mongoURL = 'mongodb+srv://kidhv1412:19021987@cluster0-prtjf.mongodb.net/mongo-demo?retryWrites=true&w=majority'
+var mongoURL = process.env.mongoURL;
 
 mongoose.connect(mongoURL, {useNewUrlParser: true, useUnifiedTopology: true});
 

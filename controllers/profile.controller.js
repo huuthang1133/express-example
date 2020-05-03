@@ -5,9 +5,9 @@ var User = require('../models/user.model');
 var cloudinary = require('cloudinary').v2;
 
 cloudinary.config({ 
-  cloud_name:  'thang',
-  api_key: '275769149845578',
-  api_secret: 'ol9zYE5X8Gj2kDISLb9TFkuA6TA'
+  cloud_name:  process.env.cloud_name,
+  api_key: process.env.api_key,
+  api_secret: process.env.api_secret
 });
 
 module.exports.index = async function(req, res){
