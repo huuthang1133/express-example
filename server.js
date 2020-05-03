@@ -62,9 +62,9 @@ app.use(sessionMiddleware);
 // app.get("/", (req, res) => {
 //   res.render("index.pug")
 // });
-app.get('/', (req, res) => {
-  res.sendFile('index.html');
-})
+// app.get('/', (req, res) => {
+//   res.sendFile('index.html');
+// })
 
 app.use('/api/transaction', apiTransaction);
 app.use('/api/book', apiBook);
