@@ -2,7 +2,7 @@ openapi: 3.0.0
 # Added by API Auto Mocking Plugin
 servers:
   - description: SwaggerHub API Auto Mocking
-    url: https://thang-codersx-express.herokuapp.com
+    url: https://thang-codersx-express.herokuapp.com/api
 info:
   description: Test APIs document Swagger
   version: "1.0.0"
